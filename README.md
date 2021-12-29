@@ -14,3 +14,5 @@ Building a simple web server following the [Rust guide](https://doc.rust-lang.or
 - use `Arc<Mutex<T>>` for sharing ownership across threads and allowing mutation
   - `Arc` lets multiple receivers own receiver
   - `Mutex` ensures one worker gets a job at a time
+- with `let` any temp values in expression are dropped when statement ends
+  - `while let`, `if let`, and `match` don't drop until block ends. this means long running inner code can hold up locks above
